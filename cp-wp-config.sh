@@ -22,7 +22,7 @@ WPDIR=wordpress
 cp -p ${DOMAINDIR}/${WPDIR}/wp-config-sample.php ${DOMAINDIR}/${WPDIR}/wp-config.php
 sudo chmod 660  ${DOMAINDIR}/${WPDIR}/wp-config.php
 #設定ファイルの該当箇所を置き換えして上書き
-sed -i s/database_name_here/$4/g ${DOMAINDIR}/${WPDIR}/wp-config.php
+sed -i s/database_name_here/$1/g ${DOMAINDIR}/${WPDIR}/wp-config.php
 sed -i s/username_here/$2/g ${DOMAINDIR}/${WPDIR}/wp-config.php
 sed -i s/password_here/$3/g ${DOMAINDIR}/${WPDIR}/wp-config.php
 sed -i s/'put your unique phrase here'/$(cat /dev/urandom | tr -dc '[:alnum:]'| head -c 32)/g ${DOMAINDIR}/${WPDIR}/wp-config.php
